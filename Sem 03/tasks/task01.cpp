@@ -3,26 +3,11 @@
 int main()
 {
     unsigned a;
-    std::cin>>a;
-
-    unsigned b;
-    std::cin>>b;
-
-    unsigned x = a;
-    unsigned y = b;
-
-    while(b!=0)
+    std::cin >> a;
+    while (a>0)
     {
-        unsigned temp = b;
-        b = a%b;
-        a = temp;
+        unsigned current = a%10;
+        std::cout<<current;
+        a = a / 10;
     }
-
-    unsigned nod = a;
-    unsigned nok = (x*y)/nod;
-
-    std::cout<<nok;
-
-
-
 }
