@@ -2,26 +2,37 @@
 
 int main()
 {
-    unsigned a;
-    std::cin >> a;
-    bool isPrime;
+    unsigned long long inputNumber;
+    std::cin >> inputNumber;
 
-    if (a > 1)
+    if (inputNumber == 0)
     {
-        isPrime = true; 
-        for (int i = 2; i * i <= a; i++)
+        std::cout << 0 << std::endl;
+    }
+
+    int maxCount = 0;
+    int bestDigit = 0;
+
+    for (int i = 9; i >= 0; i--) {
+        long long temp = inputNumber;
+        int currentCount = 0;
+
+        while (temp > 0)
         {
-            if (a % i == 0)
+            if (temp % 10 == i)
             {
-                isPrime = false;
-                break; 
+                currentCount++;
             }
+            temp = temp / 10;
+        }
+
+        if (currentCount > maxCount)
+        {
+            maxCount = currentCount;
+            bestDigit = i;
         }
     }
-    else
-    {
-        isPrime = false;
-    }
 
-    std::cout<<std::boolalpha<<isPrime;
+    std::cout << bestDigit << std::endl;
+
 }
