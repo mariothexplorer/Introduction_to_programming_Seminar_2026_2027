@@ -2,18 +2,19 @@
 
 int main()
 {
-    unsigned a;
-    std::cin>>a;
-
-    unsigned b;
-    std::cin>>b;
-
-    while(b!=0)
-    {
-        unsigned temp = b;
-        b = a%b;
-        a = temp;
-    }
-    std::cout<<a;
+	unsigned n=0;
+	std::cin>>n;
+	unsigned current;
+	unsigned sum = 0;
+	bool even = false;
+	for (unsigned i =1; i <= n; i++)
+	{
+		std::cin >> current;
+		if (current % 2 == 0)
+		{
+			sum = sum * 10 + current;
+		}		
+	}
+	std::cout << sum;
 
 }
